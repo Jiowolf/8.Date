@@ -118,10 +118,19 @@ monthDaySelect.innerHTML = `${day} <br> ${month}`;
 yearSelect.innerHTML = year;
 clockSelect.innerHTML = now.toLocaleTimeString("fr-BE", {timeZone: "Europe/Brussels"});
 
+let format = `fr-BE`
+
 clockSelect.addEventListener("click", () => {
     if(clockSelect.innerHTML === now.toLocaleTimeString("fr-BE", {timeZone: "Europe/Brussels"})){
-        clockSelect.innerHTML = now.toLocaleTimeString("en-US", {timeZone: "America/Anchorage"});
+        format = `en-US`;
+        clockSelect.innerHTML = now.toLocaleTimeString(`${format}`, {timeZone: "Europe/Brussels"});
     }else{
-        clockSelect.innerHTML = now.toLocaleTimeString("fr-BE", {timeZone: "Europe/Brussels"});
+        format = `fr-BE`;
+        clockSelect.innerHTML = now.toLocaleTimeString(`${format}`, {timeZone: "Europe/Brussels"});
     }
 });
+
+const Timer = setInterval(() => {
+    now = new Date();
+    clockSelect.innerHTML = now.toLocaleTimeString(`${format}`, {timeZone: "Europe/Brussels"});
+}, 1000);

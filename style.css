@@ -23,10 +23,12 @@ main{
 #box{
     display: grid;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     grid-template-columns: 1fr;
     grid-template-rows: 0.8fr 1fr 0.8fr;
+    height: 300px;
+    width: 150px;
 }
 
 #day{
@@ -35,6 +37,8 @@ main{
     background-color: #fd3737;
     color: #fff;
     padding: 0 auto;
+    overflow: hidden;
+    border-radius: 15% 15% 0% 0%;
 }
 
 #year{
@@ -42,10 +46,14 @@ main{
     font-weight: bold;
     background-color: #fd3737;
     color: #fff;
+    overflow: hidden;
+    border-radius: 0% 0% 15% 15%;
 }
 
 #monthDay{
     font-size: 3.5em;
     font-weight: bold;
     color: #5c5c5c;
+    justify-content: center;
 }
+
